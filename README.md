@@ -1,68 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Access Fintech UI Test
 
-## Available Scripts
+Hi 👋 Thanks for checking out Access Fintech's UI Engineer Test.
 
-In the project directory, you can run:
+For this challenge we would like you to build a small contacts list app, which interacts with a GraphQL API. The app should list all contacts retrieved from the provided API, and allow fuzzy filtering across all properties of each contact. Additionally, we should be able to add a new contact through the form in the app.
 
-### `yarn start`
+You should spend between 1 and 3 hours on the test, but we don't expect everything to be complete to perfection. We're more interested in how you approach the problems, and what you would do to improve the app if it was a real application. So please make notes as you go along.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting started
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+We have included a mock GraphQL server for you to work against. There are some contacts already created, but the rest of the data will not persist between server reloads. You are not expected to make any changes inside the `server` directory.
 
-### `yarn test`
+To start the server, run `yarn start:api`. You can explore the API at http://localhost:4520.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The rest of the repo is a fresh copy of Create React App. To help you get started, we have included [Apollo Client](https://www.apollographql.com/docs/react/) and configured it to point to the mock API.
 
-### `yarn build`
+We have also included [@apollo/react-hooks](https://www.apollographql.com/docs/react/api/react-hooks/) and [@apollo/react-components](https://www.apollographql.com/docs/react/api/react-components/) - use whichever you are comfortable with. If you would prefer to use a different GraphQL client, please go ahead!
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The rest of the stack is up to you, use whatever you enjoy. Our typical stack at Access Fintech includes:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- React with hooks
+- GraphQL
+- Styled Components
+- Cypress
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## The Contacts app
 
-### `yarn eject`
+The app should list all contacts from the mock API. Each contact has the following properties:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- `firstName` (mandatory)
+- `lastName` (mandatory)
+- `phone` (optional)
+- `email` (optional)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Each contact row should display an avatar, the contact's name, and buttons to call and email the contact if the values are present.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The avatars should be an [Adorable Avatar](http://avatars.adorable.io/#demo), where the identifier is the contact's email address. If the contact does not have an email, use a default avatar with the URL `https://api.adorable.io/avatars/face/eyes4/nose3/mouth7/8e8895`.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+There should be an input on screen which allows client-side fuzzy filering of contacts. This means that the filter string will be searched across all properties of all contacts. For example, entering "valde" will filter any contacts whose name, email, or phone number includes the string "valde".
 
-## Learn More
+Finally, there should be a "New" button, which presents a form, allowing us to add a new contact.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Here are some sample wireframes to get you started:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![](./contacts-list.png) ![](./new-contact.png)
 
-### Code Splitting
+## Submission
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+**Please do not fork or open PRs against this repository**.
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Instead, clone or download the contents of the repo, and push to a repo under your own GitHub account. Then email us a link to your finished solution. We'll take a look, and arrange a call to discuss it with you.
