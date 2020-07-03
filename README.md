@@ -25,7 +25,7 @@ The rest of the stack is up to you, use whatever you enjoy. Our typical stack at
 
 ## The Contacts app
 
-The app should list all contacts from the mock API. Each contact has the following properties:
+The app should list all contacts from the mock API, using the `contacts` query. Each contact has the following properties:
 
 - `firstName` (mandatory)
 - `lastName` (mandatory)
@@ -38,7 +38,7 @@ The avatars should be an [Adorable Avatar](http://avatars.adorable.io/#demo), wh
 
 There should be an input on screen which allows client-side fuzzy filering of contacts. This means that the filter string will be searched across all properties of all contacts. For example, entering "valde" will filter any contacts whose name, email, or phone number includes the string "valde".
 
-Finally, there should be a "New" button, which presents a form, allowing us to add a new contact.
+Finally, there should be a "New" button, which presents a form allowing us to add a new contact. The contact should be saved to the server using the `createContact` mutation.
 
 Here are some sample wireframes to get you started:
 
