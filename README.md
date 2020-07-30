@@ -40,6 +40,8 @@ There should be an input on screen which allows client-side fuzzy filering of co
 
 Finally, there should be a "New" button, which presents a form allowing us to add a new contact. The contact should be saved to the server using the `createContact` mutation.
 
+Don't worry about making it look great in all browsers - just Chrome is fine 👍
+
 Here are some sample wireframes to get you started:
 
 ![](./contacts-list.png) ![](./new-contact.png)
@@ -48,4 +50,4 @@ Here are some sample wireframes to get you started:
 
 **Please do not fork or open PRs against this repository**.
 
-Instead, clone or download the contents of the repo, and push to a repo under your own GitHub account. Then email us a link to your finished solution. We'll take a look, and arrange a call to discuss it with you.
+Instead, clone or download the contents of the repo, and push to a repo under your own GitHub account. Then email us a link to your finished solution. Feel free to include any notes you have made about what you'd do differently if this were a real application. We'll take a look, and get back to you with any feedback.
