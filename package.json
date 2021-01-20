@@ -9,10 +9,15 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "apollo-boost": "^0.4.9",
+    "bootstrap": "^4.5.3",
     "graphql": "^15.2.0",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.4.3",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "sass": "^1.32.4",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "apollo-server": "^2.15.1"

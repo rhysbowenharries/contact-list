@@ -1,0 +1,31 @@
+@import "~bootstrap/scss/bootstrap";
+
+.app {
+  padding: 10%;
+}
+
+.header {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.navbar {
+  padding: 0;
+  padding-bottom: 10px;
+}
+
+.nav-link {
+  display: block;
+  padding: 0;
+}
+
+#button-text {
+  color: black;
+}
+.button {
+  min-width: 97px;
+}
+
+#submit-button {
+  float: right;
+}
