@@ -1,5 +1,6 @@
 import React from "react";
 import { Form, FormControl } from "react-bootstrap";
+import GetContacts from "./GetContacts";
 import Topbar from "./Topbar";
 
 const ListView = () => {
@@ -14,8 +15,7 @@ const ListView = () => {
       <Form span="true">
         <FormControl type="text" placeholder="Search" />
       </Form>
-
-      <h1>home</h1>
+      <GetContacts />
     </div>
   );
 };
