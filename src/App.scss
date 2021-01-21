@@ -4,6 +4,12 @@
   padding: 10%;
 }
 
+.button {
+  min-width: 97px;
+  float: right;
+  margin-left: 10px;
+}
+
 .header {
   font-size: 40px;
   font-weight: 400;
@@ -11,7 +17,6 @@
 
 .navbar {
   padding: 0;
-  padding-bottom: 10px;
 }
 
 .nav-link {
@@ -19,11 +24,10 @@
   padding: 0;
 }
 
+.search-bar {
+  margin-bottom: 15px;
+}
+
 #button-text {
   color: black;
-}
-.button {
-  min-width: 97px;
-  float: right;
-  margin-left: 10px;
 }

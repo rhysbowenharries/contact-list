@@ -12,9 +12,6 @@ const ListView = () => {
         buttonLink="/create"
         buttonText="New"
       />
-      <Form span="true">
-        <FormControl type="text" placeholder="Search" />
-      </Form>
       <GetContacts />
     </div>
   );
