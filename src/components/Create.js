@@ -104,7 +104,6 @@ const Create = () => {
         <Button
           variant="light"
           type="submit"
-          id="submit-button"
           className="button"
           onClick={createContact}
         >

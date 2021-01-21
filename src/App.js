@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.scss";
 
 import Create from "./components/Create";
-import ListView from "./components/ListView";
+import ListView from "./components/listView/ListView";
 import NoMatch from "./components/NoMatch";
 
 function App() {

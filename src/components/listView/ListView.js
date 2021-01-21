@@ -1,7 +1,7 @@
 import React from "react";
 import { Form, FormControl } from "react-bootstrap";
 import GetContacts from "./GetContacts";
-import Topbar from "./Topbar";
+import Topbar from "../Topbar";
 
 const ListView = () => {
   return (

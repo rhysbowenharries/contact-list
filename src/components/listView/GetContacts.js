@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
-import { LOAD_CONTACTS } from "../GraphQL/Queries";
+import { LOAD_CONTACTS } from "../../GraphQL/Queries";
+
+import { emailButtonRender, callButtonRender } from "./ButtonOptions";
 
 const GetContacts = () => {
   const { loading, error, data } = useQuery(LOAD_CONTACTS);
@@ -14,11 +16,12 @@ const GetContacts = () => {
 
   if (loading) return <p>Loading ...</p>;
   if (error) return <p>Error :(</p>;
-
   return contacts.map(({ id, firstName, lastName, email, phone }) => (
     <div key={id}>
       <p>
-        {firstName} {lastName} {email} {phone}
+        {firstName}
+        {emailButtonRender(email)}
+        {callButtonRender(phone)}
       </p>
     </div>
   ));
