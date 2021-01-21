@@ -23,8 +23,7 @@ const GetContacts = () => {
         x.lastName.toLowerCase().includes(term.toLowerCase()) ||
         (x.email !== null &&
           x.email.toLowerCase().includes(term.toLowerCase())) ||
-        (x.phone !== null &&
-          x.phone.replace(/\D/g, "").includes(term.replace(/\D/g, ""))) ||
+        (x.phone !== null && x.phone.includes(term)) ||
         !term
       );
     };

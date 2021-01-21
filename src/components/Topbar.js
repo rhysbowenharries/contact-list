@@ -8,7 +8,7 @@ const Topbar = ({ header, headerLink, buttonText, buttonLink }) => {
         {header}
       </Navbar.Brand>
       <Navbar.Brand aria-controls="basic-navbar-nav" />
-      <Button variant="light" className="button">
+      <Button variant="light" className="button" id="top-button">
         <Nav.Link id="button-text" href={buttonLink}>
           {buttonText}
         </Nav.Link>

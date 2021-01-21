@@ -2,6 +2,7 @@
 
 .app {
   padding: 10%;
+  max-width: 800px;
 }
 
 .button {
@@ -9,12 +10,34 @@
   float: right;
   margin-left: 10px;
 }
+.button-div {
+  float: right;
+}
 
 .header {
   font-size: 40px;
   font-weight: 400;
 }
+.image {
+  border-radius: 50%;
+}
+.text-div {
+  margin: auto;
+  padding: 60px 0;
+}
 
+.list-text {
+  width: auto;
+}
+.media {
+  background-color: rgb(241, 240, 240);
+  padding: 10px 10px;
+  border-bottom: 1px solid rgb(134, 134, 134);
+}
+.media-body {
+  padding: 10px;
+  font-size: 22px;
+}
 .navbar {
   padding: 0;
 }
@@ -30,4 +53,8 @@
 
 #button-text {
   color: black;
+}
+#top-button {
+  right: 0;
+  position: absolute;
 }
