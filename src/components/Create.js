@@ -1,9 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
+import { useMutation } from "@apollo/client";
 
 import Topbar from "./Topbar";
+import { CREATE_CONTACT } from "../GraphQL/Mutations";
 
 const Create = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+
+  const [addContact, { error }] = useMutation(CREATE_CONTACT);
+
+  const createContact = () => {
+    addContact({
+      variables: {
+        firstName: firstName,
+        lastName: lastName,
+        phone: phone,
+        email: email,
+      },
+    });
+
+    if (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <Topbar
@@ -18,7 +42,14 @@ const Create = () => {
             First Name
           </Form.Label>
           <Col sm="8">
-            <Form.Control column="true" sm="4" type="text" />
+            <Form.Control
+              column="true"
+              sm="4"
+              type="text"
+              onChange={(e) => {
+                setFirstName(e.target.value);
+              }}
+            />
           </Col>
         </Form.Group>
 
@@ -27,7 +58,14 @@ const Create = () => {
             Last Name
           </Form.Label>
           <Col sm="8">
-            <Form.Control column="true" sm="4" type="text" />
+            <Form.Control
+              column="true"
+              sm="4"
+              type="text"
+              onChange={(e) => {
+                setLastName(e.target.value);
+              }}
+            />
           </Col>
         </Form.Group>
 
@@ -36,7 +74,14 @@ const Create = () => {
             Phone
           </Form.Label>
           <Col sm="8">
-            <Form.Control column="true" sm="4" type="tel" />
+            <Form.Control
+              column="true"
+              sm="4"
+              type="tel"
+              onChange={(e) => {
+                setPhone(e.target.value);
+              }}
+            />
           </Col>
         </Form.Group>
 
@@ -45,7 +90,14 @@ const Create = () => {
             Email
           </Form.Label>
           <Col sm="8">
-            <Form.Control column="true" sm="4" type="email" />
+            <Form.Control
+              column="true"
+              sm="4"
+              type="email"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
           </Col>
         </Form.Group>
 
@@ -54,6 +106,7 @@ const Create = () => {
           type="submit"
           id="submit-button"
           className="button"
+          onClick={createContact}
         >
           <div id="button-text">Submit</div>
         </Button>
