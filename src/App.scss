@@ -3,6 +3,9 @@
 .app {
   padding: 10%;
   max-width: 800px;
+  font-family: "Palanquin", sans-serif;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .button {
@@ -57,4 +60,8 @@
 #top-button {
   right: 0;
   position: absolute;
+}
+
+img {
+  border-radius: 50%;
 }

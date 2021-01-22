@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { LOAD_CONTACTS } from "../../GraphQL/Queries";
-import { Form, FormControl } from "react-bootstrap";
+import { Form, FormControl, Media } from "react-bootstrap";
+import faker from "faker";
 
 import { emailButtonRender, callButtonRender } from "./ButtonOptions";
 
@@ -23,7 +24,12 @@ const GetContacts = () => {
         x.lastName.toLowerCase().includes(term.toLowerCase()) ||
         (x.email !== null &&
           x.email.toLowerCase().includes(term.toLowerCase())) ||
-        (x.phone !== null && x.phone.includes(term)) ||
+        (x.phone !== null &&
+          x.phone
+            .replace(/[()]\s/g, "")
+            .includes(term.replace(/[()]\s/g, ""))) ||
+        // would like logic to  -
+        // would make many tests for this moving forward
         !term
       );
     };
@@ -36,11 +42,23 @@ const GetContacts = () => {
       .filter(fuzzyFilter(term))
       .map(({ id, firstName, lastName, email, phone }) => (
         <div key={id}>
-          <p>
-            {firstName} {lastName}
-            {emailButtonRender(email)}
-            {callButtonRender(phone)}
-          </p>
+          <Media>
+            <img
+              width={64}
+              height={64}
+              className="mr-3"
+              src={faker.image.image()}
+              // cute avatar api down, used faker. Would love to stop it rendering a new image each time.
+              alt="Generic placeholder"
+            />
+            <Media.Body>
+              <h3>
+                {firstName} {lastName}
+                {emailButtonRender(email)}
+                {callButtonRender(phone)}
+              </h3>
+            </Media.Body>
+          </Media>
         </div>
       ));
   };
