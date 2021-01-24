@@ -49,7 +49,7 @@ const GetContacts = () => {
               className="mr-3"
               src={faker.image.image()}
               // cute avatar api down, used faker. Would love to stop it rendering a new image each time.
-              alt="Generic placeholder"
+              alt="avatar"
             />
             <Media.Body>
               <h3>
